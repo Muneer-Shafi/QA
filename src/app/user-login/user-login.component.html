@@ -1,0 +1,93 @@
+<div class="bg-secondaryy" style="border: px solid transparent; background: white;">
+
+
+    <button class="btn btn-outline bg-info" style="float:right;width: 10%;" type="submit" (click)="openPopup()">Admin
+        login</button>
+
+
+
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--<div class="modal-header">
+                                      <h4>-->
+                <div class="modal-body">
+                    <button type="button" class="close" aria-label="Close" (click)="closePopup()"
+                        style="float: right;margin-bottom: 10px;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+
+                    <form [formGroup]="loginForm" (ngSubmit)="logIn()" novalidate>
+                        <!--<p class="h4 mb-4 text-center">Login</p>-->
+                        <!--Alert not success-->
+                        <div *ngIf="" && !errorMessage class="alert alert-danger" role="alert">
+                            Invalid! Email or Password
+                        </div>
+                        <div class="form-outline ">
+                            <!-- Email -->
+                            <label>Email</label>
+                            <input formControlName="email" type="email" id="typeEmailX-2" class="form-control mb-3 "
+                                placeholder="E-mail" />
+                            <p style="color: red; " *ngIf="email?.invalid &&email?.touched">Email is required
+                            <p>
+
+
+
+
+
+                                <!-- Password --><label>Password</label>
+                                <input formControlName="password" type="password" id="typePasswordX-2"
+                                    class="form-control mb-3 margin-top:4;" placeholder="Password" />
+                            <p style="color:red;" *ngIf="password?.invalid &&password?.touched">Password is
+                                required</p>
+                        </div>
+
+
+
+
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary rounded-pill margin-top:4;" type="button"
+                                [disabled]="!loginForm.valid" (click)="logIn()" [routerLink]="">LOG IN</button>
+
+
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row w-50 mx-auto my-5  ">
+
+<div class="card text-center">
+    <div class="card-header">
+        Examination
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">End Semester Exams </h5>
+        <p class="card-text">Enter your name to Start exam.</p>
+        <form [formGroup]="userForm" novalidate>
+            <div class="form-outline ">
+                <!-- Name -->
+                <input formControlName="name" type="name" id="typeEmailX-2" class="form-control mb-3 "
+                    placeholder="Enter Your Name" style="width: 50%;margin-left:25%;" />
+                <p style="color: red; " *ngIf="name?.invalid &&name?.touched">Name is required
+                </p>
+                <span>
+                <button type="button" class="btn btn-primary  btn-sm my-3 " style="width: 50%;"
+                    [disabled]="!userForm.valid" (click)="test()">Click to Start Exam</button>
+                </span>
+            </div>
+        </form>
+        <div class="card-footer text-muted">
+            Total no.of Questions = 10
+        </div>
+    </div>
+
+</div>

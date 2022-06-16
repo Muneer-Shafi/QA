@@ -1,0 +1,91 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Admin</a>
+
+    <button (click)="clickAddTest()" class="btn btn-outline bg-info" type="submit" (click)="openPopup()">Add
+      Test</button>
+
+  </div>
+</nav>
+<!--table content-->
+<table class="table mt-1 table-light mt=0 p-0">
+  <thead>
+    <tr class="bg-dark">
+      <th scope="col">S.no</th>
+      <th scope="col">Questions</th>
+      <th scope="col">Option</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of allTestData">
+      <td>{{data.id}}</td>
+      <td>{{data.name}}
+      <td>
+        <form>
+      <td>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">{{data.option1}}</mat-radio-button>
+          <mat-radio-button value="2">{{data.option2}}</mat-radio-button>
+          <mat-radio-button value="2">{{data.option3}}</mat-radio-button>
+          <mat-radio-button value="2">{{data.option4}}</mat-radio-button>
+        </mat-radio-group>
+        </form>
+      </td>
+      <td>
+        <button class="btn btn-info" (click)="openPopup()" (click)="onEditTest(data)">Edit </button>&nbsp;
+        <button class="btn btn-danger" (click)="deleteTest(data)">Delete</button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!--pop up -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--<div class="modal-header">
+          <h4>-->
+      <div class="modal-body">
+        <!--Reactive form -->
+
+        <form [formGroup]="formValue" novalidate>
+          <div class="mb-3">
+
+            <label class="form-label">Question </label>
+            <input formControlName="name" type="name" class="form-control ">
+            <p style="color: red; " *ngIf="name?.invalid &&name?.touched">Name is required
+            </p>
+            <input formControlName="option1" type="text" class="form-control margin-top:3px;"
+              placeholder="Correct option"><br>
+            <p style="color: red; " *ngIf="option1?.invalid &&option1?.touched">this field is required
+            </p>
+            <input formControlName="option2" type="text" class="form-control margin-top:3px;" placeholder="Option 2">
+            <p style="color: red; " *ngIf="option2?.invalid &&option2?.touched">this field is required
+            </p>
+            <input formControlName="option3" type="text" class="form-control margin-top:3px;" placeholder="Option 3">
+            <p style="color: red; " *ngIf="option3?.invalid &&option3?.touched">this field is required
+            </p>
+            <input formControlName="option4" type="text" class="form-control margin-top:3px;" placeholder="Option 4">
+            <p style="color: red; " *ngIf="option4?.invalid &&option4?.touched">this field is required
+            </p>
+
+          </div>
+        </form>
+        <!--Form End-->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" (click)="closePopup()">
+          Close
+        </button>
+        <button type="button" class="btn btn-success" (click)="closePopup()" (click)="addTest()"
+          [disabled]="!formValue.valid">
+          Add Details
+        </button>
+        <button *ngIf="showBtn" type="button" class="btn btn-info" (click)="updateTest()">Upadte </button>
+      </div>
+    </div>
+  </div>
+</div>
