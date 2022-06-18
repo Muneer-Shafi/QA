@@ -23,7 +23,12 @@ export class TestComponent implements OnInit {
   allexamData: any;
   randomTen: examData[] = [];
   timeLeft: any;
-  constructor(private formBuilder: FormBuilder, private api: ApiService) {}
+  constructor(private formBuilder: FormBuilder, private api: ApiService) {
+    this.getAllData();
+
+
+    
+  }
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
@@ -33,7 +38,6 @@ export class TestComponent implements OnInit {
       option3: [''],
       option4: [''],
     });
-    this.getAllData();
   }
   startTimer() {
     this.interval = setInterval(() => {

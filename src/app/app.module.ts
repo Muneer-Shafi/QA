@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 
@@ -21,6 +22,7 @@ import {MatTableModule} from '@angular/material/table';
     UserLoginComponent,
     HomeComponent,
     TestComponent,
+    EmployeeComponent,
     
   ],
   imports: [
