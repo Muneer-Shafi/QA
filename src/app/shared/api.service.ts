@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
+import { QuestionType } from '../quiz/quiz.model';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +27,10 @@ export class ApiService {
   }
   postUsers(data: any) {
     return this._http.post<any>('http://localhost:3000/users/', data);
+  }
+
+
+  getQuestions(){
+    return this._http.get<QuestionType>('http://localhost:3000/questions');
   }
 }

@@ -1,5 +1,5 @@
 {
-  "questions": [
+  "questions_mock": [
     {
       "id": 1,
       "question": "Harmon Stores Inc.",
@@ -760,6 +760,64 @@
       "last_name": "Gillions",
       "email": "egillions13@wix.com",
       "gender": "Female"
+    }
+  ],
+
+  "questions": [
+    {
+      "id": 101,
+      "question": "who is the captain of Pakistan",
+      "ans": "babar",
+      "options": {
+        "one": "umar",
+        "two": "sam",
+        "three": "khalid",
+        "four": "babr"
+      }
+    },
+    {
+      "id": 102,
+      "question": "Ipl is Oganised in which country",
+      "ans": "Ind",
+      "options": {
+        "one": "Aus",
+        "two": "Eng",
+        "three": "IRE",
+        "four": "Ind"
+      }
+    },
+    {
+      "id": 103,
+      "question": "who won  the last world cup",
+      "ans": "Aus",
+      "options": {
+        "one": "Aus",
+        "two": "Eng",
+        "three": "IRE",
+        "four": "Pak"
+      }
+    },
+    {
+      "id": 104,
+      "question": "Which team has made high score in ODI Game",
+      "ans": "Eng",
+      "options": {
+        "one": "Aus",
+        "two": "Eng",
+        "three": "IRE",
+        "four": "Pak"
+      }
+    },
+    {
+      "id": 105,
+      "question": "who is the No.1 Batsman in the World Currently",
+      "ans": "babar",
+      "options": {
+        "one": "Koli",
+        "two": "sam",
+        "three": "doni",
+        "four": "babr"
+      }
     }
   ]
 }

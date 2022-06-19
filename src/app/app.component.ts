@@ -17,4 +17,9 @@ export class AppComponent {
   employee() {
     this.router.navigate(['./employee']);
   }
+
+
+  quiz() {
+    this.router.navigate(['./quiz']);
+  }
 }

@@ -13,6 +13,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import { EmployeeComponent } from './employee/employee.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 
 
@@ -23,6 +24,7 @@ import { EmployeeComponent } from './employee/employee.component';
     HomeComponent,
     TestComponent,
     EmployeeComponent,
+    QuizComponent,
     
   ],
   imports: [
